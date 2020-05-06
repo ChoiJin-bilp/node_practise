@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			.main{
+				width:590px;
+				height: 466px;
+				border:1px solid deeppink;
+				position: relative;
+				
+				margin-left: auto;
+				margin-right: auto;
+				
+				overflow: hidden;
+			}
+			.btn{
+				width:50px;
+				height: 20px;
+				border:0;
+				background: #FF1493;
+				color:white;
+				font-weight: bold;
+				font-size: 18x;
+				position: absolute;
+				top:50%;
+				outline: 0;
+				cursor:pointer;
+			}
+			
+			.left-btn{
+				left: 0;
+				border-radius: 0px 10px 10px 0px;
+			}
+			
+			.right-btn{
+				right: 0;
+				border-radius: 10px 0px 0px 10px;
+			}
+			.right-btn1{
+				right:0%;
+				top:0%
+				color:red;
+				border-radius: 10px 10px 10px 10px;
+			}
+			.full-left{
+				float:left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<button id= "sssss1" class="btn right-btn1">停止</button>
+			<button class="btn left-btn"> &lt; </button>
+			<button class="btn right-btn"> &gt; </button>
+			<ul style="width:3000px; margin-left: 0px;" id="pics">
+				<li class="full-left">1<img src="imgs/1.webp"/></li>
+				<li class="full-left">2<img src="imgs/2.webp"/></li>
+				<li class="full-left">3<img src="imgs/3.webp"/></li>
+				<li class="full-left">4<img src="imgs/2.webp"/></li>
+				<li class="full-left">5<img src="imgs/3.webp"/></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let pics = document.getElementById('pics');
+		document.querySelector('.left-btn').onclick=function(){
+			let oldML = parseInt(pics.style.marginLeft);
+			console.log(oldML);
+			if(oldML < 0 ){
+				pics.style.marginLeft=(oldML+590)+"px";
+			}
+		}
+		
+		document.querySelector('.right-btn').onclick=function(){
+			let oldML = parseInt(pics.style.marginLeft);
+			console.log(oldML);
+			if(oldML > -(590*4)){
+				pics.style.marginLeft=(oldML-590)+"px";
+			}
+		}
+    let timeId;
+    function flashtext() {
+        let pics = document.getElementById("pics");
+        timeId = setInterval(function () {
+			let oldML = parseInt(pics.style.marginLeft);
+			if(oldML > -(590*4)){
+				pics.style.marginLeft=(oldML-590)+"px";
+			}else if(oldML < 0 ){
+				pics.style.marginLeft=(oldML+590)+"px";
+			}
+        }, 1000)
+    }
+    document.getElementById("sssss1").addEventListener("click",function(){
+        clearInterval(timeId);
+    });
+    flashtext();
+	</script>
+</html>
