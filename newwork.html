@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input id="color" /> <button id="left">对应</button>
+		<br />
+		<input id="nmb" /><button id="Plus">加</button><button id="Subtracts">减</button><button id="Times">乘</button><button id="Except">除</button><input id="nmb2" />
+	</body>
+	<script type="text/javascript">
+		document.getElementById('left').onclick=function(){
+			var inputVal = document.getElementById('color').value;
+			if(inputVal == '东'){
+				alert("春");
+			}else if(inputVal == '西'){
+				alert("夏");
+			}else if(inputVal == '南'){
+				alert("秋");
+			}else if(inputVal == '北'){
+				alert("冬");
+			}else{
+				alert("请重新输入");
+				}
+		}
+		document.getElementById('Plus').onclick=function(){
+			var inputVal = document.getElementById('nmb').value;
+			var inputVal2 = document.getElementById('nmb2').value;
+					alert(inputVal*inputVal2 )
+			}
+		document.getElementById('Subtracts').onclick=function(){
+			var inputVal = document.getElementById('nmb').value;
+			var inputVal2 = document.getElementById('nmb2').value;
+					alert(inputVal*inputVal2 )
+			}
+		document.getElementById('Times').onclick=function(){
+			var inputVal = document.getElementById('nmb').value;
+			var inputVal2 = document.getElementById('nmb2').value;
+					alert(inputVal*inputVal2 )
+			}
+		document.getElementById('Except').onclick=function(){
+			var inputVal = document.getElementById('nmb').value;
+			var inputVal2 = document.getElementById('nmb2').value;
+					alert(inputVal*inputVal2 )
+			}
+	</script>
+</html>
