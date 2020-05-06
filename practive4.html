@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li {
+				list-style: none;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.List {
+				margin-left: auto;
+				margin-right: auto;
+				height: 466px;
+				width: 590px;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.buy {
+
+				border: #FFFFFF;
+				background: linear-gradient(to left, red, blue);
+				height: 40px;
+				width: 60px;
+				color: #ccc;
+				font-size: 19px;
+				top: 50%;
+			}
+
+			.bul {
+				position: absolute;
+				right: 0;
+			}
+
+			.bur {
+				position: absolute;
+				left: 0;
+			}
+
+			.show {
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="List">
+			<button onclick="ottom()" class="buy bul"> &gt; </button>
+			<button onclick="ttom()" class="buy bur"> &lt; </button>
+			<ul id="pics" style="width:3000px;margin-left: 0px;">
+				<li class="show"><img src="imgs/2.webp" /></li>
+				<li class="show"><img src="imgs/1.webp" /></li>
+				<li class="show"><img src="imgs/3.webp" /></li>
+				<li class="show"><img src="imgs/1.webp" /></li>
+				<li class="show"><img src="imgs/3.webp" /></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		let vbn = document.getElementById('pics');
+
+		function ottom() {
+			let dnf = parseInt(vbn.style.marginLeft);
+			console.log(dnf);
+			if (dnf > -(590 * 4)) {
+				vbn.style.marginLeft = (dnf - 590) + "px";
+			};
+		};
+
+		function ttom() {
+			let dnf = parseInt(vbn.style.marginLeft);
+			console.log(dnf);
+			if (dnf < 0) {
+				vbn.style.marginLeft = (dnf + 590) + "px";
+			};
+		};
+		let timeId;
+
+		function fuidn() {
+			timed = setInterval(function() {
+				let dnf = parseInt(vbn.style.marginLeft);
+				if (dnf > -2360) {
+					vbn.style.marginLeft = (dnf - 590) + "px";
+				}else {
+					vbn.style.marginLeft = 0 + "px";}
+			}, 1000)
+		};
+		fuidn();
+	</script>
+</html>
